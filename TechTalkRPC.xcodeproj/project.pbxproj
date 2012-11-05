@@ -18,6 +18,8 @@
 		3584CB31164828C600512256 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3584CB30164828C600512256 /* Default-568h@2x.png */; };
 		3584CB34164828C600512256 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3584CB32164828C600512256 /* MainStoryboard.storyboard */; };
 		3584CB37164828C600512256 /* RPCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584CB36164828C600512256 /* RPCViewController.m */; };
+		35B3970216485DA100B74925 /* RPCRotatableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3970116485DA100B74925 /* RPCRotatableNavigationController.m */; };
+		35B3970616485DC800B74925 /* RPCNonRotatableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		3584CB33164828C600512256 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3584CB35164828C600512256 /* RPCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPCViewController.h; sourceTree = "<group>"; };
 		3584CB36164828C600512256 /* RPCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPCViewController.m; sourceTree = "<group>"; };
+		35B3970016485DA100B74925 /* RPCRotatableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCRotatableNavigationController.h; sourceTree = "<group>"; };
+		35B3970116485DA100B74925 /* RPCRotatableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCRotatableNavigationController.m; sourceTree = "<group>"; };
+		35B3970416485DC800B74925 /* RPCNonRotatableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCNonRotatableNavigationController.h; sourceTree = "<group>"; };
+		35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCNonRotatableNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +91,13 @@
 			children = (
 				3584CB29164828C500512256 /* RPCAppDelegate.h */,
 				3584CB2A164828C500512256 /* RPCAppDelegate.m */,
-				3584CB32164828C600512256 /* MainStoryboard.storyboard */,
 				3584CB35164828C600512256 /* RPCViewController.h */,
 				3584CB36164828C600512256 /* RPCViewController.m */,
+				3584CB32164828C600512256 /* MainStoryboard.storyboard */,
+				35B3970016485DA100B74925 /* RPCRotatableNavigationController.h */,
+				35B3970116485DA100B74925 /* RPCRotatableNavigationController.m */,
+				35B3970416485DC800B74925 /* RPCNonRotatableNavigationController.h */,
+				35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */,
 				3584CB21164828C500512256 /* Supporting Files */,
 			);
 			path = TechTalkRPC;
@@ -177,6 +187,8 @@
 				3584CB27164828C500512256 /* main.m in Sources */,
 				3584CB2B164828C500512256 /* RPCAppDelegate.m in Sources */,
 				3584CB37164828C600512256 /* RPCViewController.m in Sources */,
+				35B3970216485DA100B74925 /* RPCRotatableNavigationController.m in Sources */,
+				35B3970616485DC800B74925 /* RPCNonRotatableNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +305,7 @@
 				3584CB3C164828C600512256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
