@@ -10,6 +10,11 @@
 #import "RPCNonRotatableNavigationController.h"
 #import "RPCPresentedViewController.h"
 #import <AdSupport/AdSupport.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import <EventKit/EventKit.h>
+#import <EventKitUI/EventKitUI.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface RPCViewController ()
 
@@ -18,6 +23,7 @@
 - (void)button3Clicked:(id)sender;
 - (void)button4Clicked:(id)sender;
 - (void)buttonClicked:(id)sender;
+- (void)addressbookAuthorizationStateDecided:(BOOL)granted;
 
 @end
 
@@ -51,7 +57,7 @@
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button2.translatesAutoresizingMaskIntoConstraints = NO;
     //button2.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
-    [button2 setTitle:@"button 2" forState:UIControlStateNormal];
+    [button2 setTitle:@"Contacts" forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(button2Clicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
 
@@ -222,17 +228,95 @@
 }
 
 - (void)button2Clicked:(id)sender {
+    CFErrorRef abError = NULL;
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &abError);
+    CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+    ABRecordRef person = NULL;
+    NSLog(@"%ld contacts", nPeople);
+    
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            dispatch_async(dispatch_get_main_queue(), ^{[self addressbookAuthorizationStateDecided:granted];});
+        });
+    } else {//if ((ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) && !abError && addressBook) {
+//        CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
+//        if (nPeople > 0) {
+//            person = CFArrayGetValueAtIndex(people, 0);
+//        }
+//        
+//        ABPersonViewController *controller = [[ABPersonViewController alloc] init];
+//        controller.addressBook = addressBook;
+//        controller.displayedPerson = person;
+//        controller.allowsEditing = YES;
+//        controller.hidesBottomBarWhenPushed = YES;
+//        controller.editing = YES;
+//        self.navigationController.navigationBar.tintColor = nil;
+//        [self.navigationController pushViewController:controller animated:YES];
+//        [self.navigationController setNavigationBarHidden:NO animated:YES];
+//        
+//        // Vasile: Beware of crashes
+//        if (people) {
+//            CFRelease(people);
+//        }
+        
+        
+        // ABNewPersonViewController
+        ABRecordRef personRef = ABPersonCreate();
+        
+        ABMultiValueRef multiValueRef = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+        if (ABMultiValueAddValueAndLabel(multiValueRef, @"1234", kABPersonPhoneMobileLabel, NULL) == YES) {
+            CFErrorRef anError = NULL;
+            ABRecordSetValue(personRef, kABPersonPhoneProperty, multiValueRef, &anError);
+        }
+        
+        if (ABMultiValueAddValueAndLabel(multiValueRef, @"oooo@k.ro", kABOtherLabel, NULL) == YES) {
+            CFErrorRef anError = NULL;
+            ABRecordSetValue(personRef, kABPersonEmailProperty, multiValueRef, &anError);
+        }
+        
+        ABRecordSetValue(personRef, kABPersonOrganizationProperty, @"SV", NULL);
+        
+        ABNewPersonViewController *controller = [[ABNewPersonViewController alloc] init];
+        controller.newPersonViewDelegate = nil;
+        controller.addressBook = addressBook;
+        controller.displayedPerson = personRef;
+        
+        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:controller];
+        [self.navigationController presentModalViewController:navigation animated:YES];
+        
+        CFRelease(personRef);
+        CFRelease(multiValueRef);
+        
+        // Vasile: Beware of crashes
+        if (addressBook) {
+            CFRelease(addressBook);
+        }
+    }
 }
 
 - (void)button3Clicked:(id)sender {
+    EKEventStore *ekStore = [[EKEventStore alloc] init];
+    if ([EKEventStore authorizationStatusForEntityType:EKEntityTypeReminder] == EKAuthorizationStatusNotDetermined) {
+        [ekStore requestAccessToEntityType:EKEntityTypeReminder completion:NULL];
+    }
 }
 
 - (void)button4Clicked:(id)sender {
+    ALAssetsLibrary *lib = [[ALAssetsLibrary alloc] init];
+    [lib addAssetsGroupAlbumWithName:@"TestRPC" resultBlock:^(ALAssetsGroup *group) {
+        NSLog(@"Success! Group created!!!");
+    } failureBlock:^(NSError *error) {
+         NSLog(@"Failure! Error is: %@, %@", error.localizedFailureReason, error.localizedDescription);
+    }];
 }
 
 - (void)buttonClicked:(id)sender {
     RPCNonRotatableNavigationController *navController = [[RPCNonRotatableNavigationController alloc] initWithRootViewController:[[RPCPresentedViewController alloc] initWithNibName:nil bundle:nil]];
     [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)addressbookAuthorizationStateDecided:(BOOL)granted {
+    [self button2Clicked:nil];
 }
 
 @end

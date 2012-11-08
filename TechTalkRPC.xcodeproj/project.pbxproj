@@ -28,6 +28,16 @@
 		35B3970616485DC800B74925 /* RPCNonRotatableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */; };
 		5DA9511A164BDB2800BD92F8 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95119164BDB2800BD92F8 /* AdSupport.framework */; };
 		5DA9511D164BDB4100BD92F8 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9511C164BDB4100BD92F8 /* AdSupport.framework */; };
+		5DA9511F164BDF7200BD92F8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9511E164BDF7200BD92F8 /* AddressBook.framework */; };
+		5DA95121164BDF8C00BD92F8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95120164BDF8C00BD92F8 /* AddressBook.framework */; };
+		5DA95123164BE10300BD92F8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95122164BE10300BD92F8 /* AddressBookUI.framework */; };
+		5DA95125164BE10900BD92F8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95124164BE10900BD92F8 /* AddressBookUI.framework */; };
+		5DA95127164BED7600BD92F8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95126164BED7600BD92F8 /* EventKit.framework */; };
+		5DA95129164BED7D00BD92F8 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95128164BED7D00BD92F8 /* EventKitUI.framework */; };
+		5DA9512B164BED8200BD92F8 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9512A164BED8200BD92F8 /* EventKitUI.framework */; };
+		5DA9512D164BED8600BD92F8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9512C164BED8600BD92F8 /* EventKit.framework */; };
+		5DA9512F164BF36700BD92F8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9512E164BF36700BD92F8 /* AssetsLibrary.framework */; };
+		5DA95131164BF36B00BD92F8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95130164BF36B00BD92F8 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +70,16 @@
 		35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCNonRotatableNavigationController.m; sourceTree = "<group>"; };
 		5DA95119164BDB2800BD92F8 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5DA9511C164BDB4100BD92F8 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5DA9511E164BDF7200BD92F8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5DA95120164BDF8C00BD92F8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5DA95122164BE10300BD92F8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		5DA95124164BE10900BD92F8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		5DA95126164BED7600BD92F8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		5DA95128164BED7D00BD92F8 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		5DA9512A164BED8200BD92F8 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		5DA9512C164BED8600BD92F8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		5DA9512E164BF36700BD92F8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5DA95130164BF36B00BD92F8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +87,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA9512F164BF36700BD92F8 /* AssetsLibrary.framework in Frameworks */,
+				5DA95129164BED7D00BD92F8 /* EventKitUI.framework in Frameworks */,
+				5DA95127164BED7600BD92F8 /* EventKit.framework in Frameworks */,
+				5DA95123164BE10300BD92F8 /* AddressBookUI.framework in Frameworks */,
+				5DA9511F164BDF7200BD92F8 /* AddressBook.framework in Frameworks */,
 				5DA9511A164BDB2800BD92F8 /* AdSupport.framework in Frameworks */,
 				3584CB1B164828C500512256 /* UIKit.framework in Frameworks */,
 				3584CB1D164828C500512256 /* Foundation.framework in Frameworks */,
 				3584CB1F164828C500512256 /* CoreGraphics.framework in Frameworks */,
 				5DA9511D164BDB4100BD92F8 /* AdSupport.framework in Frameworks */,
+				5DA95121164BDF8C00BD92F8 /* AddressBook.framework in Frameworks */,
+				5DA95125164BE10900BD92F8 /* AddressBookUI.framework in Frameworks */,
+				5DA9512B164BED8200BD92F8 /* EventKitUI.framework in Frameworks */,
+				5DA9512D164BED8600BD92F8 /* EventKit.framework in Frameworks */,
+				5DA95131164BF36B00BD92F8 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +111,11 @@
 		3584CB0B164828C500512256 = {
 			isa = PBXGroup;
 			children = (
+				5DA9512E164BF36700BD92F8 /* AssetsLibrary.framework */,
+				5DA95128164BED7D00BD92F8 /* EventKitUI.framework */,
+				5DA95126164BED7600BD92F8 /* EventKit.framework */,
+				5DA95122164BE10300BD92F8 /* AddressBookUI.framework */,
+				5DA9511E164BDF7200BD92F8 /* AddressBook.framework */,
 				5DA95119164BDB2800BD92F8 /* AdSupport.framework */,
 				3584CB20164828C500512256 /* TechTalkRPC */,
 				3584CB19164828C500512256 /* Frameworks */,
@@ -99,6 +134,11 @@
 		3584CB19164828C500512256 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DA95130164BF36B00BD92F8 /* AssetsLibrary.framework */,
+				5DA9512C164BED8600BD92F8 /* EventKit.framework */,
+				5DA9512A164BED8200BD92F8 /* EventKitUI.framework */,
+				5DA95124164BE10900BD92F8 /* AddressBookUI.framework */,
+				5DA95120164BDF8C00BD92F8 /* AddressBook.framework */,
 				5DA9511C164BDB4100BD92F8 /* AdSupport.framework */,
 				3584CB1A164828C500512256 /* UIKit.framework */,
 				3584CB1C164828C500512256 /* Foundation.framework */,
