@@ -26,6 +26,8 @@
 		35939661164B161300990F1B /* Steel_pog.png in Resources */ = {isa = PBXBuildFile; fileRef = 3593965C164B161300990F1B /* Steel_pog.png */; };
 		35B3970216485DA100B74925 /* RPCRotatableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3970116485DA100B74925 /* RPCRotatableNavigationController.m */; };
 		35B3970616485DC800B74925 /* RPCNonRotatableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */; };
+		5DA9511A164BDB2800BD92F8 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA95119164BDB2800BD92F8 /* AdSupport.framework */; };
+		5DA9511D164BDB4100BD92F8 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9511C164BDB4100BD92F8 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		35B3970116485DA100B74925 /* RPCRotatableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCRotatableNavigationController.m; sourceTree = "<group>"; };
 		35B3970416485DC800B74925 /* RPCNonRotatableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCNonRotatableNavigationController.h; sourceTree = "<group>"; };
 		35B3970516485DC800B74925 /* RPCNonRotatableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCNonRotatableNavigationController.m; sourceTree = "<group>"; };
+		5DA95119164BDB2800BD92F8 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5DA9511C164BDB4100BD92F8 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +67,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA9511A164BDB2800BD92F8 /* AdSupport.framework in Frameworks */,
 				3584CB1B164828C500512256 /* UIKit.framework in Frameworks */,
 				3584CB1D164828C500512256 /* Foundation.framework in Frameworks */,
 				3584CB1F164828C500512256 /* CoreGraphics.framework in Frameworks */,
+				5DA9511D164BDB4100BD92F8 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,7 @@
 		3584CB0B164828C500512256 = {
 			isa = PBXGroup;
 			children = (
+				5DA95119164BDB2800BD92F8 /* AdSupport.framework */,
 				3584CB20164828C500512256 /* TechTalkRPC */,
 				3584CB19164828C500512256 /* Frameworks */,
 				3584CB17164828C500512256 /* Products */,
@@ -92,6 +99,7 @@
 		3584CB19164828C500512256 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DA9511C164BDB4100BD92F8 /* AdSupport.framework */,
 				3584CB1A164828C500512256 /* UIKit.framework */,
 				3584CB1C164828C500512256 /* Foundation.framework */,
 				3584CB1E164828C500512256 /* CoreGraphics.framework */,

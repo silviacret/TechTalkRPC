@@ -9,6 +9,7 @@
 #import "RPCViewController.h"
 #import "RPCNonRotatableNavigationController.h"
 #import "RPCPresentedViewController.h"
+#import <AdSupport/AdSupport.h>
 
 @interface RPCViewController ()
 
@@ -43,7 +44,7 @@
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     //button1.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
     button1.translatesAutoresizingMaskIntoConstraints = NO;
-    [button1 setTitle:@"button 1" forState:UIControlStateNormal];
+    [button1 setTitle:@"UDID" forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(button1Clicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
@@ -212,6 +213,12 @@
 }
 
 - (void)button1Clicked:(id)sender {
+    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"UDID"
+                                                     message:[NSString stringWithFormat:@"%@ \n\n %@ \n\n %@", [[NSUUID UUID] UUIDString], [[[UIDevice currentDevice] identifierForVendor] UUIDString], [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]]
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    [alert1 show];
 }
 
 - (void)button2Clicked:(id)sender {
