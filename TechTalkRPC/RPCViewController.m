@@ -39,6 +39,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+#warning If you don't set translatesAutoresizingMaskIntoConstraints to NO for programatically created views, you'll get unsatisfiable constraint warning (WARNING: Unable to simultaneously satisfy constraints.)
     label.translatesAutoresizingMaskIntoConstraints = NO;
     [label setText:@"This is a view which doesn't support rotation, but it's navigation controller does support rotation in all interface orientations"];
     label.numberOfLines = 3;
@@ -46,7 +47,6 @@
     [self.view addSubview:label];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //button1.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
     button1.translatesAutoresizingMaskIntoConstraints = NO;
     [button1 setTitle:@"UDID" forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(button1Clicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -54,21 +54,18 @@
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button2.translatesAutoresizingMaskIntoConstraints = NO;
-    //button2.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
     [button2 setTitle:@"Contacts" forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(button2Clicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
 
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button3.translatesAutoresizingMaskIntoConstraints = NO;
-    //button3.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
     [button3 setTitle:@"button 3" forState:UIControlStateNormal];
     [button3 addTarget:self action:@selector(button3Clicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
 
     UIButton *button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button4.translatesAutoresizingMaskIntoConstraints = NO;
-    //button4.frame = CGRectMake(0.0, 0.0, 100.0, 50.0);
     [button4 setTitle:@"button 4" forState:UIControlStateNormal];
     [button4 addTarget:self action:@selector(button4Clicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
@@ -139,6 +136,7 @@
                                                                    attribute:NSLayoutAttributeCenterY
                                                                   multiplier:1.0
                                                                     constant:0.0];
+#warning If you comment this you'll get AMBIGUITY and button2 will not be Y positioned
     [self.view addConstraint:constraint3];
     
     // position button 4 to be aligned with button 3 (same centerY)
@@ -210,6 +208,26 @@
                                                                    multiplier:1.0
                                                                      constant:-50.0];
     [self.view addConstraint:constraint10];
+    
+#warning This constraint leads to unsatisfiable constraints applied to button (WARNING: Unable to simultaneously satisfy constraints.)
+//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:button
+//                                                                    attribute:NSLayoutAttributeBottom
+//                                                                    relatedBy:NSLayoutRelationGreaterThanOrEqual
+//                                                                       toItem:self.view
+//                                                                    attribute:NSLayoutAttributeBaseline
+//                                                                   multiplier:1.0
+//                                                                     constant:60.0];
+//    [self.view addConstraint:constraint];
+
+#warning This constraint leads to satisfying the constraints in an unexpected way (WARNING: Unable to simultaneously satisfy constraints.)
+//    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:button
+//                                                                    attribute:NSLayoutAttributeBottom
+//                                                                    relatedBy:NSLayoutRelationEqual
+//                                                                       toItem:self.view
+//                                                                    attribute:NSLayoutAttributeBaseline
+//                                                                   multiplier:1.0
+//                                                                     constant:-100.0];
+//    [self.view addConstraint:constraint];
 }
 
 - (BOOL)shouldAutorotate {
