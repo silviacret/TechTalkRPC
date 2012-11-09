@@ -10,8 +10,6 @@
 #import "RPCNonRotatableNavigationController.h"
 #import "RPCPresentedViewController.h"
 #import <AdSupport/AdSupport.h>
-#import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
 #import <EventKit/EventKit.h>
 #import <EventKitUI/EventKitUI.h>
 #import <AssetsLibrary/AssetsLibrary.h>
@@ -277,12 +275,12 @@
         ABRecordSetValue(personRef, kABPersonOrganizationProperty, @"SV", NULL);
         
         ABNewPersonViewController *controller = [[ABNewPersonViewController alloc] init];
-        controller.newPersonViewDelegate = nil;
+        controller.newPersonViewDelegate = self;
         controller.addressBook = addressBook;
         controller.displayedPerson = personRef;
         
         UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:controller];
-        [self.navigationController presentModalViewController:navigation animated:YES];
+        [self.navigationController presentViewController:navigation animated:YES completion:NULL];
         
         CFRelease(personRef);
         CFRelease(multiValueRef);
@@ -317,6 +315,13 @@
 
 - (void)addressbookAuthorizationStateDecided:(BOOL)granted {
     [self button2Clicked:nil];
+}
+
+#pragma mark -
+#pragma mark ABNewPersonViewControllerDelegate
+
+- (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person {
+    [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
